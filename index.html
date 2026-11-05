@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cinder Reach Help</title>
+<meta name="description" content="Help and contact for Cinder Reach, a fantasy RPG for iPhone.">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="icon.png" alt="" width="64" height="64">
+    <div>
+      <p class="brand">Cinder Reach</p>
+      <p class="kicker">Help &amp; support</p>
+    </div>
+  </header>
+  <nav aria-label="Pages">
+    <a href="./" aria-current="page">Help</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </nav>
+
+  <h1>Need a hand?</h1>
+  <p>Cinder Reach is a fantasy RPG for iPhone, made by one developer. If something isn't working, or you've lost a purchase, email me and I'll sort it out.</p>
+
+  <div class="contact">
+    <span class="label">Email</span>
+    <span class="email" id="email">evanprawda@icloud.com</span>
+    <button type="button" id="copy">Copy</button>
+    <p class="note">I usually reply within two working days. Please mention your iPhone model and iOS version, and the in-game time or date if it's about a purchase.</p>
+  </div>
+
+  <h2>Common questions</h2>
+
+  <details>
+    <summary>I bought something and it didn't show up</summary>
+    <p>Open the <span class="path">Shop</span> tab, scroll to the bottom and tap <span class="path">Restore purchases</span>. Make sure you're signed in with the same Apple Account you bought with. If a purchase is waiting for approval (Ask to Buy), it's added the next time you open the game after it's approved.</p>
+    <p>Still missing? Email me with the purchase date. Your receipt from Apple lists it.</p>
+  </details>
+
+  <details>
+    <summary>How do I get a refund?</summary>
+    <p>Apple handles all payments and refunds. Request one at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. I can't issue refunds myself, but I'm happy to help with anything else about a purchase.</p>
+  </details>
+
+  <details>
+    <summary>How do I cancel the Hold Pass?</summary>
+    <p>Go to <span class="path">Settings › Apple Account › Subscriptions</span> on your iPhone and choose Hold Pass. You can also tap <span class="path">Manage subscription</span> on the Hold Pass card in the Shop. Cancel at least 24 hours before it renews to avoid the next charge. Your benefits last until the end of the month you've paid for.</p>
+  </details>
+
+  <details>
+    <summary>I got a new iPhone. Can I bring my progress?</summary>
+    <p>Not yet, sorry. Your heroes, gear, gold and gems are saved on the iPhone you play on, and deleting the game deletes them. An iPhone backup restored to a new phone brings them along. On a fresh install, <span class="path">Restore purchases</span> brings back the Founder's Pack and an active Hold Pass, but gems and gold already bought aren't restored. Syncing through iCloud is planned.</p>
+  </details>
+
+  <details>
+    <summary>How do I get on the leaderboards?</summary>
+    <p>Sign in to Game Center in <span class="path">Settings › Game Center</span>. The game posts your highest level, best item level, bosses defeated and fastest dungeon clears whenever you set a new record. See them on the <span class="path">Hero</span> tab under Records.</p>
+  </details>
+
+  <details>
+    <summary>There's no sound</summary>
+    <p>Cinder Reach follows your iPhone's silent switch (the Ring/Silent switch or Action button), so turn silent mode off. If music is already playing from another app, the game's music stays off so it won't talk over yours. Music and effects volume are on the <span class="path">Hero</span> tab under Sound.</p>
+  </details>
+
+  <details>
+    <summary>What is Calm mode?</summary>
+    <p>A switch on the hero-select screen and in the Sound panel. It plays slower, softer versions of every track, swaps the harshest fight sounds for gentler ones and softens the haptics. It changes how the game sounds and feels, not how hard it is.</p>
+  </details>
+
+  <details>
+    <summary>Which iPhones does it run on?</summary>
+    <p>Any iPhone with iOS 17 or later.</p>
+  </details>
+
+  <footer>
+    <span>© 2026 Evan Prawda</span>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+  </footer>
+</div>
+<script>
+  (function () {
+    var btn = document.getElementById('copy');
+    var email = document.getElementById('email');
+    btn.addEventListener('click', function () {
+      var text = email.textContent.trim();
+      function selectIt() {
+        var range = document.createRange();
+        range.selectNodeContents(email);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        btn.textContent = 'Selected';
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { btn.textContent = 'Copied'; }, selectIt);
+      } else {
+        selectIt();
+      }
+      setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cinder Reach Privacy Policy</title>
+<meta name="description" content="Cinder Reach collects no personal data. What stays on your iPhone, and what Apple handles.">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="icon.png" alt="" width="64" height="64">
+    <div>
+      <p class="brand">Cinder Reach</p>
+      <p class="kicker">Privacy Policy</p>
+    </div>
+  </header>
+  <nav aria-label="Pages">
+    <a href="./">Help</a>
+    <a href="privacy.html" aria-current="page">Privacy Policy</a>
+  </nav>
+
+  <h1>Privacy Policy</h1>
+  <p class="date">Effective November 4, 2026</p>
+
+  <div class="summary">
+    <p><strong>The short version:</strong> Cinder Reach doesn't collect any personal data. There are no accounts, ads, analytics or tracking, and I don't run any servers. Your progress stays on your iPhone. Apple handles payments and Game Center under its own privacy policy.</p>
+  </div>
+
+  <p>Cinder Reach is a game for iPhone made by Evan Prawda, an independent developer in the United States ("I" and "me" below). This policy covers the Cinder Reach app and this website.</p>
+
+  <h2>What stays on your iPhone</h2>
+  <p>Your heroes, gear, gold, gems, quests, buildings and settings (such as music volume and Calm mode) are saved on your iPhone. They aren't sent to me or to anyone else. Your iPhone's own backups may include them. Deleting the game deletes them.</p>
+
+  <h2>Purchases</h2>
+  <p>Payments go through the App Store. Apple processes them, and I never see your name, payment details or Apple Account. The game receives confirmation from Apple, on your iPhone, of what you've bought, so it can add gems or gold and turn on the Founder's Pack or Hold Pass. Apple's <a href="https://www.apple.com/legal/privacy/">privacy policy</a> covers how Apple handles purchases.</p>
+  <p>Apple sends me sales reports, such as how many of each item sold in each country. These reports don't identify who bought them.</p>
+
+  <h2>Game Center</h2>
+  <p>Game Center is optional. If you're signed in, the game posts your best scores to Game Center leaderboards: highest hero level, best item level, bosses defeated and fastest dungeon clears. Apple runs Game Center, so your Game Center name and scores are handled by Apple and shown to other players according to your Game Center settings. To stop, sign out in <span class="path">Settings › Game Center</span>.</p>
+
+  <h2>App Store statistics</h2>
+  <p>If you've chosen to share analytics with app developers in your iPhone's settings, Apple may give me statistics such as installs, sessions and crash reports. They're anonymous and don't identify you. You can turn this off in <span class="path">Settings › Privacy &amp; Security › Analytics &amp; Improvements</span>.</p>
+
+  <h2>Children</h2>
+  <p>Since the game collects no personal data, it doesn't collect any from children. Parents can turn off in-app purchases, or require approval for them, with Screen Time and Ask to Buy.</p>
+
+  <h2>This website</h2>
+  <p>This site is hosted on GitHub Pages. It has no cookies, analytics or trackers, and loads nothing from other sites. Like any web host, GitHub may log visitors' IP addresses for security; see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</p>
+
+  <h2>If you email me</h2>
+  <p>If you write to me for help, I'll use your email address and what you send only to answer you. I won't add you to a mailing list or share your message with anyone.</p>
+
+  <h2>Changes</h2>
+  <p>If the game starts collecting any data, for example to sync progress through iCloud, I'll update this page and the date at the top before that version is released.</p>
+
+  <h2>Contact</h2>
+  <div class="contact">
+    <span class="label">Email</span>
+    <span class="email" id="email">evanprawda@icloud.com</span>
+    <button type="button" id="copy">Copy</button>
+  </div>
+
+  <footer>
+    <span>© 2026 Evan Prawda</span>
+    <a href="./">Help</a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+  </footer>
+</div>
+<script>
+  (function () {
+    var btn = document.getElementById('copy');
+    var email = document.getElementById('email');
+    btn.addEventListener('click', function () {
+      var text = email.textContent.trim();
+      function selectIt() {
+        var range = document.createRange();
+        range.selectNodeContents(email);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        btn.textContent = 'Selected';
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () { btn.textContent = 'Copied'; }, selectIt);
+      } else {
+        selectIt();
+      }
+      setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+    });
+  })();
+</script>
+</body>
+</html>
